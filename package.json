@@ -1,0 +1,23 @@
+{
+  "name": "electron-printer",
+  "version": "1.0.0",
+  "description": "electron printer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyhahaha/electron-printer.git"
+  },
+  "author": "test",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zyhahaha/electron-printer/issues"
+  },
+  "homepage": "https://github.com/zyhahaha/electron-printer#readme",
+  "devDependencies": {
+    "electron": "^29.1.6"
+  }
+}
