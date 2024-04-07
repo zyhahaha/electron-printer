@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+// const { ipcRenderer } = require('electron');
 const escpos2 = require('node-escpos-win');
 const getPixel = require('get-pixels');
 const { getImageData } = require('./getImageDataUtil.js');
@@ -8,15 +8,15 @@ const { getImageData } = require('./getImageDataUtil.js');
 //     return new Promise(resolve => setTimeout(resolve, ms));
 // }
 
-const generateUUID = (prefix) => {
-    let d = new Date().getTime()
-    const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        const r = (d + Math.random() * 16) % 16 | 0
-        d = Math.floor(d / 16)
-        return (c == 'x' ? r : (r & 0x7 | 0x8)).toString(16)
-    })
-    return (prefix || 'van-') + uuid // 为什么要加van-？因为需要支持自定义class功能，html的class不支持数字开头
-}
+// const generateUUID = (prefix) => {
+//     let d = new Date().getTime()
+//     const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+//         const r = (d + Math.random() * 16) % 16 | 0
+//         d = Math.floor(d / 16)
+//         return (c == 'x' ? r : (r & 0x7 | 0x8)).toString(16)
+//     })
+//     return (prefix || 'van-') + uuid // 为什么要加van-？因为需要支持自定义class功能，html的class不支持数字开头
+// }
 
 const rgba2hexFn = (data, shape) => {
     const bitArr = [];
@@ -63,13 +63,13 @@ const rgba2hexFn = (data, shape) => {
     return new Uint8Array(byteArr);
 };
 
-function printPreconditionUsbDevicePath (printerName, printCommandFn) {
-    const ipcID = generateUUID('ipc-')
-    ipcRenderer.send('onGetUsbDevicePath', printerName, ipcID)
-    ipcRenderer.once(`runPrintCommand_${ipcID}`, (event, usbDevicePath) => {
-        printCommandFn && printCommandFn(usbDevicePath)
-    });
-}
+// function printPreconditionUsbDevicePath (printerName, printCommandFn) {
+//     const ipcID = generateUUID('ipc-')
+//     ipcRenderer.send('onGetUsbDevicePath', printerName, ipcID)
+//     ipcRenderer.once(`runPrintCommand_${ipcID}`, (event, usbDevicePath) => {
+//         printCommandFn && printCommandFn(usbDevicePath)
+//     });
+// }
 
 function ipcTsplCommand (usbDevicePath, base64Data) {
     getImageData(base64Data, (data, imgWidth, imgHeight) => {

@@ -2,7 +2,7 @@
 // import { ipcEscPosCommand } from './print-label/tools.js'
 import {
     drawFunction
-} from './print-label/common.js'
+} from './print/base64.js'
 
 const drawDataList = [
     {

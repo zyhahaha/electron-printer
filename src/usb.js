@@ -1,5 +1,4 @@
 const { exec } = require('child_process');
-const { ipcEscPosCommand } = require('../print-label/tools')
 
 const extractDeviceID = (deviceInfo) => {
     if (!deviceInfo) return null;
@@ -234,9 +233,8 @@ async function printTest(usbDevicePath) {
 
     // const { handlePrint } = require('../print-label/delivery/draw-delivery.js')
     // const base64Data = await handlePrint(printData, configData, 327, true)
-    const base64Data = require('./base64.js')
+    // const base64Data = require('./base64.js')
     // console.log('xxx', base64Data, handlePrint)
-    ipcEscPosCommand(usbDevicePath, base64Data)
 }
 
 module.exports = {
