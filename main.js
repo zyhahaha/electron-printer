@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron/main')
 const path = require('node:path')
-const { queryUsbDevicePathFn } = require('./src/usb')
-const { ipcEscPosCommand } = require('./src/print')
+const { queryUsbDevicePathFn } = require('./electron/usb')
+const { ipcEscPosCommand } = require('./electron/print')
 
 const createWindow = () => {
     const win = new BrowserWindow({

@@ -2,7 +2,7 @@
 // import { ipcEscPosCommand } from './print-label/tools.js'
 import {
     drawFunction
-} from './print/base64.js'
+} from '../electron/print/base64.js'
 
 const drawDataList = [
     {
