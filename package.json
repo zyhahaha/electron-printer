@@ -19,5 +19,13 @@
   "homepage": "https://github.com/zyhahaha/electron-printer#readme",
   "devDependencies": {
     "electron": "^29.1.6"
+  },
+  "dependencies": {
+    "node-escpos-win": "^1.0.15",
+    "dayjs": "^1.11.10",
+    "get-pixels": "^3.3.3",
+    "jimp": "^0.22.12",
+    "jsbarcode": "^3.11.6",
+    "wmic-js": "0.0.3"
   }
 }
