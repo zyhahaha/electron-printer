@@ -1,8 +1,8 @@
 // const { ipcEscPosCommand } = require('../print-label/tools')
 // import { ipcEscPosCommand } from './print-label/tools.js'
 import {
-    drawFunction
-} from '../electron/print/base64.js'
+    Json2CanvasBase64
+} from '../electron/base64.js'
 
 const drawDataList = [
     {
@@ -20,7 +20,7 @@ getPathBtnEl.addEventListener('click', async () => {
     const ipcID = "generateUUID('ipc-')"
     const printerName = 'XP-58 (副本 5)'
     const usbDevicePath = await window.electronAPI.onGetUsbDevicePath(printerName, ipcID)
-    const base64Data = drawFunction(drawDataList, 500)
+    const base64Data = Json2CanvasBase64(drawDataList, 500)
     console.log('xxx', base64Data)
 
     await window.electronAPI.onSendPrintTask(usbDevicePath, base64Data)
