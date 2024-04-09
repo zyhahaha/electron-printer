@@ -1,7 +1,10 @@
 const { app, BrowserWindow, ipcMain } = require('electron/main')
 const path = require('node:path')
-const { queryUsbDevicePathFn } = require('./electron/usb')
-const { ipcEscPosCommand } = require('./electron/print')
+const {
+    queryUsbDevicePathFn,
+    ipcTsplCommand,
+    ipcEscPosCommand
+} = require('escpos-tspl.electron')
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -14,10 +17,9 @@ const createWindow = () => {
 
     win.loadFile('index.html')
 
-    ipcMain.handle('onGetUsbDevicePath', (event, printerName, ipcID) => {
+    ipcMain.handle('onGetUsbDevicePath', (event, printerName) => {
         return new Promise((resolve, reject) => {
             queryUsbDevicePathFn(printerName, (usbDevicePath) => {
-                // win.webContents.send(`runPrintCommand_${ipcID}`, usbDevicePath);
                 resolve(usbDevicePath)
             })
         })
