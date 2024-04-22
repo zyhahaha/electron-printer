@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/zyhahaha/electron-printer#readme",
   "devDependencies": {
-    "electron": "^29.1.6"
+    "electron": "^29.1.6",
+    "electron-vite": "^2.1.0"
   },
   "dependencies": {
     "escpos-tspl.electron": "^1.0.0",
