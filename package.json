@@ -4,7 +4,9 @@
   "description": "electron printer",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "electron-vite preview",
+    "dev": "electron-vite dev",
+    "prebuild": "electron-vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
