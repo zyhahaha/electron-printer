@@ -26,7 +26,7 @@ const createWindow = () => {
     })
 
     ipcMain.on('onSendPrintTask', (event, usbDevicePath, base64Data) => {
-        ipcEscPosCommand(usbDevicePath, base64Data)
+        ipcTsplCommand(usbDevicePath, base64Data)
     })
 }
 

@@ -44,7 +44,7 @@ const printJson = [
 
 const getPathBtnEl = document.getElementById('print-btn')
 getPathBtnEl.addEventListener('click', async () => {
-    const printerName = 'XP-58 (副本 5)'
+    const printerName = 'HPRT N41'
     const usbDevicePath = await window.electronAPI.onGetUsbDevicePath(printerName)
     const base64Data = printJson2CanvasBase64(printJson, 400, imageData)
     console.log('xxx', base64Data)

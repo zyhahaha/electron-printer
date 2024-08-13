@@ -24,7 +24,7 @@
     "electron-vite": "^2.1.0"
   },
   "dependencies": {
-    "escpos-tspl.electron": "^1.0.0",
+    "escpos-tspl.electron": "^1.0.1",
     "json2canvas.base64": "^1.0.1"
   }
 }
