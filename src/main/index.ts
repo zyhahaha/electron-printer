@@ -51,7 +51,7 @@ app.whenReady().then(() => {
   })
 
   // IPC test
-  ipcMain.on('ping', () => console.log('pong'))
+  // ipcMain.on('ping', () => console.log('pong'))
   ipcMain.handle('onGetUsbDevicePath', (event, printerName) => {
     return new Promise((resolve, reject) => {
       queryUsbDevicePathFn(printerName, (usbDevicePath) => {
