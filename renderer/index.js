@@ -1,6 +1,6 @@
 import {
     printJson2CanvasBase64
-} from 'json2canvas.base64'
+} from '../node_modules/json2canvas.base64/dist/json2canvas.base64.js'
 
 function preloadImageFn (src) {
     return new Promise((resolve, reject) => {
