@@ -1,16 +1,16 @@
 @import './base.css';
 
 body {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden; */
   background-image: url('./wavy-lines.svg');
   background-size: cover;
   user-select: none;
 }
 
-code {
+/* code {
   font-weight: 600;
   padding: 3px 5px;
   border-radius: 2px;
@@ -24,14 +24,14 @@ code {
     Liberation Mono,
     monospace;
   font-size: 85%;
-}
+} */
 
 #app {
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 80px;
+  margin-bottom: 80px; */
 }
 
 .logo {

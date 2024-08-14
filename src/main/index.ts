@@ -7,8 +7,8 @@ import { queryUsbDevicePathFn, ipcTsplCommand, ipcEscPosCommand } from 'escpos-t
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 700,
+    height: 470,
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
