@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="print">打印</button>
+</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/json2canvas.base64@1.0.1/dist/json2canvas.base64.js"></script> -->
+ <script src="./print-demo.js"></script>
+<script>
+    const ws = new WebSocket('ws://localhost:12345');
+
+    ws.onopen = function () {
+        console.log('Connected to WebSocket server');
+    };
+
+    ws.onmessage = function (event) {
+        console.log('Received message: ' + event.data);
+    };
+
+    document.getElementById('print').addEventListener('click', () => {
+        const tsplDataJson = [{"type":"text","fontSize":"60","fontWeight":"bold","textAlign":"center","content":"商家联","y":100},{"type":"barcode","content":"12120","fontWeight":"normal","position":"absolute","textAlign":"right","width":200,"height":100,"displayValue":true,"text":12120,"textMargin":5},{"type":"text","fontSize":"28","fontWeight":"normal","textAlign":"start","content":"店铺名称：测试店铺-天猫","y":180,"wrapText":true},{"type":"text","fontSize":"28","fontWeight":"normal","textAlign":"start","content":"付款时间：2024-06-01 09:59:22","y":220,"wrapText":false},{"type":"text","fontSize":"28","fontWeight":"normal","textAlign":"start","content":"收件人：元愈底","y":260,"wrapText":false},{"type":"text","fontSize":"28","fontWeight":"normal","textAlign":"start","content":"收件电话：*******0685","y":300,"wrapText":false},{"type":"text","fontSize":"28","fontWeight":"normal","textAlign":"start","maxWidth":500,"content":"收货地址：广东省 阳江市 市辖区 七里园乡 测试地址","y":300,"wrapText":true},{"type":"dashedLine","lineWidth":2},{"type":"text","fontSize":"28","fontWeight":"bold","textAlign":"start","content":"卖家备注：绿色","wrapText":true},{"type":"text","fontSize":"28","fontWeight":"bold","textAlign":"start","content":"买家备注：","wrapText":true},{"type":"solidLine","lineWidth":2},{"type":"text","content":"商品名称","fontSize":"28","fontWeight":"normal","maxWidth":500,"textAlign":"start","wrapText":true},{"type":"text","content":"数量","fontSize":"28","fontWeight":"normal","position":"absolute","textAlign":"end","wrapText":false},{"type":"text","content":"1. 昆中药 金花消痤丸4g*12袋/盒 痤疮粉刺 便秘尿黄赤 牙痛咽喉肿痛","fontSize":"28","fontWeight":"normal","textAlign":"start","maxWidth":500,"wrapText":true},{"type":"text","content":"1","fontSize":"28","fontWeight":"normal","position":"absolute","textAlign":"end","wrapText":false},{"type":"dashedLine","lineWidth":2},{"type":"text","content":"商品简称：-","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true},{"type":"text","content":"规格：产品名称:4g*12袋 x 1盒","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true},{"type":"text","content":"条形码：-      SKU：106010008","fontSize":"28","fontWeight":"normal","textAlign":"start","maxWidth":566,"wrapText":true},{"type":"text","content":"货位：-      批准文号：-","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true,"maxWidth":566},{"type":"text","content":"生产厂家：-","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true},{"type":"text","content":"批号：- / 日期：- / 数量：1","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true,"maxWidth":566},{"type":"solidLine","lineWidth":2},{"type":"barcode","content":"tma2734081542176380","width":200,"height":100,"displayValue":true,"text":"平台订单号：tma2734081542176380","format":"CODE128","fontSize":"20","textMargin":5,"textAlign":"center"},{"type":"text","content":"商家图片下方文字yyy","fontSize":"28","fontWeight":"normal","textAlign":"center","color":"#000"},{"type":"text","content":"商家自定义文字xxx","fontSize":"24","fontWeight":"normal","textAlign":"center","color":"#000"}]
+        const escDataJson = [{"type":"text","fontSize":"60","fontWeight":"bold","textAlign":"center","content":"顾客联","y":100},{"type":"barcode","content":"12120","fontWeight":"normal","position":"","textAlign":"right","width":200,"height":100,"displayValue":true,"text":12120,"textMargin":5},{"type":"text","fontSize":"28","fontWeight":"normal","textAlign":"start","content":"店铺名称：测试店铺-天猫","y":180,"wrapText":true},{"type":"text","fontSize":"28","fontWeight":"normal","textAlign":"start","content":"付款时间：2024-06-01 09:59:22","y":220,"wrapText":false},{"type":"text","fontSize":"28","fontWeight":"normal","textAlign":"start","content":"收件人：元愈底","y":260,"wrapText":false},{"type":"text","fontSize":"28","fontWeight":"normal","textAlign":"start","content":"收件电话：*******0685","y":300,"wrapText":false},{"type":"text","fontSize":"28","fontWeight":"normal","textAlign":"start","maxWidth":327,"content":"收货地址：广东省 阳江市 市辖区 七里园乡 测试地址","y":300,"wrapText":true},{"type":"dashedLine","lineWidth":2},{"type":"text","fontSize":"28","fontWeight":"bold","textAlign":"start","content":"卖家备注：绿色","wrapText":true},{"type":"text","fontSize":"28","fontWeight":"bold","textAlign":"start","content":"买家备注：","wrapText":true},{"type":"solidLine","lineWidth":2},{"type":"text","content":"商品名称","fontSize":"28","fontWeight":"normal","maxWidth":327,"textAlign":"start","wrapText":true},{"type":"text","content":"数量","fontSize":"28","fontWeight":"normal","position":"absolute","textAlign":"end","wrapText":false},{"type":"text","content":"1. 昆中药 金花消痤丸4g*12袋/盒 痤疮粉刺 便秘尿黄赤 牙痛咽喉肿痛","fontSize":"28","fontWeight":"normal","textAlign":"start","maxWidth":327,"wrapText":true},{"type":"text","content":"1","fontSize":"28","fontWeight":"normal","position":"absolute","textAlign":"end","wrapText":false},{"type":"dashedLine","lineWidth":2},{"type":"text","content":"商品简称：-","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true},{"type":"text","content":"规格：产品名称:4g*12袋 x 1盒","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true},{"type":"text","content":"条形码：-","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true},{"type":"text","content":"SKU：106010008","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true},{"type":"text","content":"货位：-","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true},{"type":"text","content":"批准文号：-","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true},{"type":"text","content":"生产厂家：-","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true},{"type":"text","content":"批号：- / 日期：- / 数量：1","fontSize":"28","fontWeight":"normal","textAlign":"start","wrapText":true,"maxWidth":366},{"type":"solidLine","lineWidth":2},{"type":"barcode","content":"tma2734081542176380","width":200,"height":100,"displayValue":true,"text":"平台订单号：tma2734081542176380","format":"CODE128","fontSize":"20","textMargin":5,"textAlign":"center"},{"type":"text","content":"aaa111","fontSize":"28","fontWeight":"normal","textAlign":"center","color":"#000"},{"type":"text","content":"  ","fontSize":"60","fontWeight":"normal","textAlign":"center","color":"#fff"}]
+        const printerName = "HPRT N41";
+        const base64Data = printJson2CanvasBase64(tsplDataJson, 72*8); // 47*8
+        console.log(base64Data)
+        const printJson = JSON.stringify({
+            command: 'tspl',
+            printerName,
+            data: base64Data
+        })
+        ws.send(printJson);
+    });
+</script>
+
+</html>

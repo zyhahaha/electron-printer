@@ -2,7 +2,10 @@ import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+import coreRun from './core'
 import { queryUsbDevicePathFn, ipcTsplCommand, ipcEscPosCommand } from 'escpos-tspl.electron'
+
+coreRun()
 
 function createWindow(): void {
   // Create the browser window.
